@@ -1,14 +1,15 @@
 # <a href="https://roadmap.sh/">Roadmap.Sh</a> Projects
 
+This repository contains multiple frontend projects built during my learning journey.
 
-Welcome to my web development learning portfolio! This repository contains multiple mini-projects and exercises as I explore HTML, CSS, JavaScript, and full-stack development.
+## Projects
 
-## 📁 Projects
+- **Project 0 – Single Page CV**  
+  A responsive CV layout built with HTML and CSS.
 
-### 1. [Single-Page-CV](./Single-Page-CV)
-A responsive single-page resume built with HTML and CSS.
+- **Project 1 – Basic HTML Website**  
+  A simple multi-section website using semantic HTML.
 
-### 2. [Basic HTML Website](./Basic HTML Website)
-A simple multi-page website using basic HTML structure.
+## About
 
-Each folder contains its own README with more details.
+This README provides an overview of all projects in this repository.
