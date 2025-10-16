@@ -6,6 +6,7 @@ This repository contains multiple frontend projects built during my learning jou
 
 - **Project 0 – Single Page CV**  
   A responsive CV layout built with HTML and CSS.
+  https://roadmap.sh/projects/single-page-cv
 
 - **Project 1 – Basic HTML Website**  
   A simple multi-section website using semantic HTML.
