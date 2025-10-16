@@ -20,35 +20,65 @@
 <meta property="og:description" content="You're gonna find here all of nice pages.">
     <style>
 
+body {
+    background-color: #858585;
+}
 header {
-            position: relative;
+            position: sticky;
+            top: 20px;
+            z-index: 1;
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 100%;
+            min-height: 2svh;
             border-radius: 20px;
-             background-color: #d3d2d2a3; 
+             background-color: #d3d2d2; 
 }
 h1.title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+h1.main-window-title{
+    position: absolute;
+    display: flex;
+    font-size: 40px;
+}
+p.main-window-description {
+    position: absolute;
+    bottom: 10svb;
+    display: flex;
+    font-size: 15px;
+}
 p.description {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
 .logoText {
     font-size: 2svh;
+    position: relative;
+    display: flex;
+    height: auto;
+    width: auto;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-
+.mainWindow {
+    position: relative;
+    display: flex;
+    min-height: 40svb;
+    max-width: 100%;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    background-color: #928e94c4;
+    border: solid, black;
+    border-radius: 2px;
+}
 .headerLogo {
     position: relative;
     display: flex;
-    gap: 10px;
+    gap: 3svh;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 3svh;
 
 }
 .headerNavbar{
@@ -59,13 +89,28 @@ p.description {
 .logoImg {
     position: relative;
 }
-
 a.linkHref{
     font-style: italic;
 }
+footer {
+   display:flex;
+   flex-direction:column;
+   gap:8px;padding:16px;
+   border-top:1px solid #39353bc4;
+    border-radius:0 0 20px 20px;
+    
+}
+
+.opensouce-work {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
     </style>
 </head>
-<body>
+    <body>
         <header>
                 <!-- Logo and my Name -->
             <div id="headerLogo" class="headerLogo">
@@ -83,16 +128,16 @@ a.linkHref{
                 </nav>
             </div>
         </header>
-        <main>
-            <!-- Window Top Section -->
-            <div class="mainWindow" id="mainWindow"> 
-                <h1 class="title"> Frontend Developer </h1>
-                <p class="description">html only with proper layout, no styling</p>
+            <main>
+        <!-- Window Top Section -->
+        <div class="mainWindow" id="mainWindow"> 
+            <h1 class="main-window-title"> Frontend Developer </h1>
+                <p class="main-window-description">html only with proper layout, no styling</p>
             </div>
             <!-- Window Mid Sections -->
-            <div class="openFirstSection" id="openFirstSection">
-
-                <div class="projectsGrid" id="projectsGrid">
+             <hr>
+            <div class="openFirstSectionGrid" id="openFirstSectionGrid">
+                <div class="project" id="project">
                      <h1 class="title">Projects </h1>
                      <ul>
                         <li><p class="description">HTML Only Porfolio</p></li>
@@ -103,12 +148,12 @@ a.linkHref{
                      </ul>
                 </div>
 
-                <div class="experienceGrid" id="experienceGrid">
+                <div class="work-expirience" id="work-expirience">
                     <h1 class="title">WordExperience</h1>
                     <p class="description">Solved all the frontend projects</p>
                 </div>
 
-                <div class="educationGrid" id="educationGrid">
+                <div class="education" id="education">
                     <h1 class="title">Education </h1>
                     <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                          Quas aperiam harum totam commodi delectus dolorum. Quaerat voluptatum consectetur,
@@ -127,13 +172,14 @@ a.linkHref{
                     </ul>
                 </div>
 
-                <div class="openSourceGrid" id="openSourceGrid">
+                <div class="opensource-work" id="opensource-work">
                     <h1 class="title">OpenSource Work</h1>
                     <p class="description">Contributed to 50 opensouce projects. Made my own products with 200 Github Stars.</p>
                     <a href="https://github.com/1hum8le" class="linkHref">Visit my GitHub Profile</a>
                 </div>
 
             </div>
+            <hr>
             <!-- Window Bottom Section -->
             <div class="revievsWindow" id="revievsWindow">
                 <h1 class="title"> Reviews from my Teachers </h1>
@@ -150,10 +196,10 @@ a.linkHref{
                     <span class="underText"> Joe Mama </span>
                 </div>
             </div>
-        </main>
+            </main>
         <footer> 
             <footer>
-                <div class="footer-content" style="display:flex;flex-direction:column;gap:8px;padding:16px;border-top:1px solid #ccc;border-radius:0 0 20px 20px;background:#f5f5f5;">
+                <div class="footer-content">
                     <nav class="footer-nav" aria-label="Footer navigation" style="display:flex;gap:10px;flex-wrap:wrap;">
                         <a href="#" rel="noopener">Home</a>
                         <a href="#" rel="noopener">Projects</a>
@@ -167,7 +213,7 @@ a.linkHref{
                         </address>
                     </div>
 
-                    <div class="footer-meta" style="font-size:0.8rem;color:#666;">
+                    <div class="footer-meta" style="font-size:0.8rem;">
                         <p style="margin:0;">© Jacob Sobon 2025 | All rights reserved.</p>
                         <p style="margin:0;">Built with plain HTML — accessible and semantic.</p>
                     </div>
