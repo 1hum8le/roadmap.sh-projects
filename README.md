@@ -1,4 +1,4 @@
-# <a href="https://roadmap.sh/">Roadmap.Sh</a> Projects
+# <a href="https://roadmap.sh/">Roadmap.Sh Projects</a> 
 
 This repository contains multiple frontend projects built during my learning journey.
 
