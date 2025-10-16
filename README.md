@@ -10,6 +10,7 @@ This repository contains multiple frontend projects built during my learning jou
 
 - **Project 1 – Basic HTML Website**  
   A simple multi-section website using semantic HTML.
+  https://roadmap.sh/projects/basic-html-website
 
 ## About
 
