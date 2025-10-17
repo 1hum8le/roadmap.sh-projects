@@ -1,13 +1,10 @@
-
-
 body {
     background-color: #ffffff;
     font-size: 16px;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 ;}
 main {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
 header {
             position: sticky;
             top: 20px;
@@ -135,4 +132,22 @@ footer {
     border-radius:0 0 20px 20px;
     
 ;}
-   
+.revievsWindow {
+    position: relative;
+    margin: auto;
+    padding: auto;
+    height: 2fr;
+    width: auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.revievTitle{
+    position: relative;
+    display: flex;
+}
+.rev {
+    position: relative;
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+}
