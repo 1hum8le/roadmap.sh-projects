@@ -18,97 +18,7 @@
 <meta property="og:URL" content="#" />
 <meta property="og:image" content="https://i.pinimg.com/736x/23/3c/38/233c384e9dd3b1b1eb0d35e948c590f8.jpg" />
 <meta property="og:description" content="You're gonna find here all of nice pages.">
-    <style>
 
-body {
-    background-color: #858585;
-}
-header {
-            position: sticky;
-            top: 20px;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 100%;
-            min-height: 2svh;
-            border-radius: 20px;
-             background-color: #d3d2d2; 
-}
-h1.title {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-h1.main-window-title{
-    position: absolute;
-    display: flex;
-    font-size: 40px;
-}
-p.main-window-description {
-    position: absolute;
-    bottom: 10svb;
-    display: flex;
-    font-size: 15px;
-}
-p.description {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
-.logoText {
-    font-size: 2svh;
-    position: relative;
-    display: flex;
-    height: auto;
-    width: auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.mainWindow {
-    position: relative;
-    display: flex;
-    min-height: 40svb;
-    max-width: 100%;
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    background-color: #928e94c4;
-    border: solid, black;
-    border-radius: 2px;
-}
-.headerLogo {
-    position: relative;
-    display: flex;
-    gap: 3svh;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3svh;
-
-}
-.headerNavbar{
-    position: relative;
-    float: right;
-    margin-right: 20px;
-}
-.logoImg {
-    position: relative;
-}
-a.linkHref{
-    font-style: italic;
-}
-footer {
-   display:flex;
-   flex-direction:column;
-   gap:8px;padding:16px;
-   border-top:1px solid #39353bc4;
-    border-radius:0 0 20px 20px;
-    
-}
-
-.opensouce-work {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-
-    </style>
 </head>
     <body>
         <header>
@@ -117,7 +27,6 @@ footer {
                 <img href="index.html" class="logoImg" alt="logo.png" id="logo" src="/Basic HTML Website/src/favicon.ico" width="30px" height="30px"> 
                 <p class="logoText" id="logoText"> Jacob Sobon </h1>
             </div>
-
                 <!-- Navigation Bar -->
             <div id="headerNavbar" class="headerNavbar">
                 <nav>
@@ -136,10 +45,12 @@ footer {
             </div>
             <!-- Window Mid Sections -->
              <hr>
-            <div class="openFirstSectionGrid" id="openFirstSectionGrid">
+            <div class="windowGridSection" id="windowGridSection">
+
                 <div class="project" id="project">
-                     <h1 class="title">Projects </h1>
-                     <ul>
+                     <h1 class="title"> Projects </h1>
+
+                     <ul class="projectList" id="projectList">
                         <li><p class="description">HTML Only Porfolio</p></li>
                         <li><p class="description">Calculator</p></li>
                         <li><p class="description">Quiz App</p></li>
@@ -148,7 +59,7 @@ footer {
                      </ul>
                 </div>
 
-                <div class="work-expirience" id="work-expirience">
+                <div class="workexp" id="workexp">
                     <h1 class="title">WordExperience</h1>
                     <p class="description">Solved all the frontend projects</p>
                 </div>
@@ -172,7 +83,7 @@ footer {
                     </ul>
                 </div>
 
-                <div class="opensource-work" id="opensource-work">
+                <div class="sourcework" id="sourcework">
                     <h1 class="title">OpenSource Work</h1>
                     <p class="description">Contributed to 50 opensouce projects. Made my own products with 200 Github Stars.</p>
                     <a href="https://github.com/1hum8le" class="linkHref">Visit my GitHub Profile</a>
