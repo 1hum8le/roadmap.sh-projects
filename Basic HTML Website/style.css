@@ -1,153 +1,215 @@
-body {
-    background-color: #ffffff;
-    font-size: 16px;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-;}
-main {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
+/* 
+
+pallete:
+color-1 - rgb(98, 111, 71)
+color-2 - rgb(164, 180, 101)
+color-3 - rgb(245, 236, 213)
+color-4 - rgb(240, 187, 120)
+
+*/
+
+/* Media Quairy */
+
+/* Desktop */
+@media (max-width:1440px){}
+/* Tablet */
+@media (max-width:1024px){}
+/* Phones */
+
+
+/* Phone Eding */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-rendering:optimizeLegibility;
+
+}
+
+
+html, body {
+    display: block;
+    font-size: 1rem;
+    scroll-behavior: smooth;
+    margin: 0;
+    background-color: rgb(248, 189, 113);
+
+    
+}
+.header-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(236, 156, 51);
+    /* unicode-bidi: isolate;  */
+    /* if arabic language ^ make the algoritm to change from l-r to r-l */
+}
+
 header {
-            position: sticky;
-            top: 20px;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 100%;
-            min-height: 2svh;
-            border-radius: 20px;
-             background-color: #9afa8d; 
-;}
-h1.title {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-;}
-h1.main-window-title{
-    position: absolute;
+    display: grid;
+    grid-template-columns: 30%, 70%;
+    grid-template-areas: "bhw-start bhw-end";
+    justify-content: space-between;
+    align-items: center; /* aligns items vertically */
+    margin: 1em;
+    padding: 0.5rem 1rem;
+    min-height: 1rem;
+    min-width: 70%;
+    overflow: hidden;
+    text-align: center;
+}
+
+#logo {
+  max-width: 40svh;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.bhwlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:not(.logo):hover{
+        font-size: 1.05rem;
+        box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.062), 0px 6px 20px 0 rgba(0, 0, 0, 0.185);
+        border-radius: 1.2rem;
+}
+
+nav.navbar-container {
+        display: flex;
+        max-width: fit-content;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+}
+ul.navbar-header {
     display: flex;
-    padding: auto;
-    margin: auto;
+        justify-content: space-between;
+        list-style-type: none;
+}
+
+li.navbar-list{
+    margin: 0.3rem;
+}
+
+h1#hero-title {
     font-size: 3rem;
-;}
-p.main-window-description {
-    position: relative;
-    top: 5svb;
-    padding: auto;
-    margin: auto;
-    display: flex;
-    font-size: 1.1rem;
-;}
-p.description {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-;}
-.logoText {
-    font-size: 1.2rem;
-    position: relative;
-    display: grid;
-    box-shadow: 3px 2px 2px rgb(0, 0, 0);
-    text-transform: uppercase;
-    margin: 10fr;
-    height: auto;
-    width: auto;
-    
-;}
-.mainWindow {
-    position: relative;
-    display: flex;
-    min-height: 40svb;
-    max-width: 100%;
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    background-color: #928e94c4;
-    border: solid, black;
-    border-radius: 2px;
-    ;}
-.headerLogo {
-    position: relative;
-    display: flex;
-    gap: 3svh;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3svh;}
-.headerNavbar{
-    position: relative;
-    float: right;
-    margin-right: 20px;
-;}
-.logoImg {
-    position: relative;
-;}
-a.linkHref{
-    font-style: italic;
-;}
-.windowGridSection {
+    padding-bottom: 1rem;
+}
 
+/* Specific Grid Areas */
+.bhw-start {
+display: flex;
+text-align: center;
+justify-content: center;
+max-height: 2rem;
+}
+
+.bhw-end {
+     display: flex;
+    text-align: center;
+    justify-content: center;
+    max-height: 2rem;
+}
+
+
+.page-container {
+    box-sizing: border-box;
+    position: relative;
+     background-color: rgb(238, 177, 97);
+     display: block;
+     max-width: 80%;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 0%;
+     margin-bottom: 0%;
+    padding: 1rem;
+    justify-content: center;
+     align-items: center;
+}
+
+.hero {
+        min-height: 25rem;
+        display: flex;
+        position: relative;
+        border-radius: 0.5em;
+        text-align: center;
+        background-color: rgb(239, 255, 98);
+        flex-direction: column;
+        transition: background-color 1s ease;
+        justify-content: center;
+        overflow: hidden;
+}
+
+.hero:hover {
+  animation: rainbow 5s linear infinite;
+}
+@keyframes rainbow {
+  0%   { background-color: rgb(239, 255, 98); } /* start */
+  14%  { background-color: rgb(255, 179, 186); } /* soft red/pink */
+  28%  { background-color: rgb(255, 223, 186); } /* soft orange */
+  42%  { background-color: rgb(255, 255, 186); } /* soft yellow */
+  57%  { background-color: rgb(186, 255, 201); } /* soft green */
+  71%  { background-color: rgb(186, 225, 255); } /* soft blue */
+  85%  { background-color: rgb(201, 186, 255); } /* soft indigo/violet */
+  100% { background-color: rgb(239, 255, 98); } /* loop back */
+}
+
+.information-section {
+        background-color: rgb(255, 189, 68);
+        text-align: center;
+        display: block;
+        min-height: 25rem;
+        padding: 2rem;
+        position: relative;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        overflow: hidden;
+        border-radius: 0.5em;
+}
+
+.information-grid {
     display: grid;
-    border: solid 0.5px rgba(255, 255, 255, 0);
-    justify-content: space-evenly;
-    grid-template-columns: 2fr 3fr 2fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "project workexp education"
-    "project sourcework education"
-;}
-.project {
-    grid-area: project;
-    border: solid 0.5px rgb(153, 153, 153);
-    margin: 2svh;
-    padding: 5svh;
-;}
-.workexp {
-    grid-area: workexp;
-        border: solid 0.5px rgb(153, 153, 153);
-    margin: 2svh;
-    padding: 5svh;;
-    font-size: 1.5rem;
-;}
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    justify-items: center;
+}
+
+.projects {
+    grid-row: span 2 / span 2;
+    width: 100%;
+    padding: 0.3rem;
+    justify-items: center;
+    
+}
+.workexperience {
+    padding: 0.3rem;
+}
+
 .education {
-    grid-area: education;
-        border: solid 0.5px rgb(153, 153, 153);
-    margin: 2svh;
-    padding: 5svh;
-    font-size: 1.2rem;
-;}
-.sourcework {
-    grid-area: sourcework;
-    display: block;
-    align-items: center;
-    justify-content: center;
-        border: solid 0.5px rgb(153, 153, 153);
-    margin: 2svh;
-    padding: 5svh;
-    font-size: 1.3rem;
-;}
-ul.projectList {
-    font-size: 2rem;
-;}
-footer {
+    grid-row: span 2 / span 2;
+    padding: 0.3rem;
+}
 
-   display:flex;
-   flex-direction:column;
-   gap:8px;padding:16px;
-   border-top:1px solid #39353bc4;
-    border-radius:0 0 20px 20px;
-    
-;}
-.revievsWindow {
-    position: relative;
-    margin: auto;
-    padding: auto;
-    height: 2fr;
-    width: auto;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.revievTitle{
-    position: relative;
-    display: flex;
-}
-.rev {
-    position: relative;
-    display: block;
-    justify-content: space-evenly;
-    align-items: center;
+.opensouce {
+     grid-column-start: 2;
+    padding: 0.3rem;
 }
