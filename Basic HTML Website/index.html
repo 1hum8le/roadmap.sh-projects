@@ -33,13 +33,13 @@
                    <div class="bhw-end">         
                 <nav class="navbar-container">
                     <ul class="navbar-header">
-                    <li class="navbar-list" id="homepage">
+                    <li class="navbar-list" id="navhomepage">
                         <a href="/Basic HTML Website/index.html" class="nav-link"><i class="fa fa-home"></i>Home</a></li>
-                    <li class="navbar-list" id="projects">
+                    <li class="navbar-list" id="navprojects">
                         <a href="/Basic HTML Website/pages/projects.html"class="nav-link"><i class="fa fa-folder"></i>Projects</a></li>
-                    <li class="navbar-list" id="articles">
+                    <li class="navbar-list" id="navarticles">
                         <a href="/Basic HTML Website/pages/articles.html"class="nav-link"><i class="fa fa-file"></i>Article</a></li>
-                    <li class="navbar-list" id="contact">
+                    <li class="navbar-list" id="navcontact">
                         <a href="/Basic HTML Website/pages/contact.html"class="nav-link"><i class="fa fa-handshake-o"></i>Contact</a></li>
                     </ul>
                 </nav>
@@ -51,34 +51,54 @@
     <main>
                 <!-- Window Top Section -->
 <div class="hero" id="hero"> 
-    <h1 id="hero-title"> Frontend Developer </h1>
-        <span class="hero-description">simple website for a Roadmap.sh </span>
+    <div class="hero-title"><h1 id="hero-titletext"> Frontend Developer </h1> 
+        <span class="hero-description">simple website for a Roadmap.sh </span> </div>
 </div>
             <!-- Information Grid Section-->
 <div class="information-section" id="information-section">
     <div class="information-grid" id="information-grid">
-                <div class="projects" id="projects">
-                    
-                     <h1 class="projects"> Projects </h1>
-                     <ul class="projects" id="projectList">
-                        <li><p class="projects">HTML Only Porfolio</p></li>
-                        <li><p class="projects">Calculator</p></li>
-                        <li><p class="projects">Quiz App</p></li>
-                        <li><p class="projects">Countdown Timer</p></li>
-                        <li><p class="projects">Upcoming Products</p></li>
-                     </ul>
+                <div class="projectsGrid" id="projects">
+                    <div class="projectGrid-projectbox" id="projectGrid-projectbox">
+                        <div class="projectstitle"> <h1 class="projectgrid-titletext"> Projects </h1> </div>
+                        <ul class="projectsList" id="projectList">
+                            <div class="projectitem" id="projectitem-HTML">
+                            <li class="project-list-item"><p class="projects-button-text">GitHub</p></li>
+                            </div>
+                            <div class="projectitem" id="projectitem-calc">
+                            <li class="project-list-item"><p class="projects-button-text">Calculator</p></li>
+                            </div>
+                            <div class="projectitem" id="projectitem-quiz">
+                            <li class="project-list-item"><p class="projects-button-text">Game Apps</p></li>
+                            </div>
+                            <div class="projectitem" id="projectitem-countdown">
+                            <li class="project-list-item"><p class="projects-button-text">Countdown Timer</p></li>
+                            </div>
+                            <div class="projectitem" id="projectitem-upcoming">
+                            <li class="project-list-item"><p class="projects-button-text">Upcoming Products</p></li>
+                            </div>
+                            </ul>
+                    </div>
                 </div>
-                <div class="workexperience" id="workexp">
-                    <h1 class="workexperience">Work Experience</h1>
-                    <p class="workexperience">Solved all the frontend projects</p>
+                <div class="workexperience-Grid" id="workexperience">
+                    <div class="workexperience-workgridbox" id="workexperience-workgridbox">
+                        <div class="workexperience-title"><h1 class="workexperience">Work Experience</h1></div>
+                        <div class="workexperience-description">
+                            <p class="workexperience">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                 Error, sequi, placeat, earum inventore numquam totam repellat
+                                  molestias ab odio porro impedit quisquam aliquam a sunt magnam 
+                                  reiciendis. Rem, minus illo!
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="education" id="education">
+                <div class="educationGrid" id="education">
                     <h1 class="education">Education </h1>
                     <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                          Quas aperiam harum totam commodi delectus dolorum. Quaerat voluptatum consectetur,
                          suscipit aspernatur quos maxime ex amet, voluptates impedit ad deserunt possimus alias.</p>
                     <p class="education"> Courses I took: </p>
-                    <ul>
+                    <ul class="educationList" id="education-ul">
                         <li>Here is gonna be some diffrent data.</li>
                         <li>Here is gonna be some diffrent data.</li>
                         <li>Here is gonna be some diffrent data.</li>
@@ -90,7 +110,7 @@
                         <li>Here is gonna be some diffrent data.</li>
                     </ul>
                 </div>
-                <div class="opensouce" id="opensouce">
+                <div class="opensouceGrid" id="opensouce">
                     <h1 class="opensouce">OpenSource Work</h1>
                     <p class="opensouce">Contributed to 50 opensouce projects. Made my own products with 200 Github Stars.</p>
                     <a href="https://github.com/1hum8le" class="linkHref">Visit my GitHub Profile</a>

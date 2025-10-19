@@ -1,25 +1,5 @@
-/* 
 
-pallete:
-color-1 - rgb(98, 111, 71)
-color-2 - rgb(164, 180, 101)
-color-3 - rgb(245, 236, 213)
-color-4 - rgb(240, 187, 120)
-
-*/
-
-/* Media Quairy */
-
-/* Desktop */
-@media (max-width:1440px){}
-/* Tablet */
-@media (max-width:1024px){}
-/* Phones */
-
-
-/* Phone Eding */
-
-
+/* Body Section Start*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,7 +11,6 @@ color-4 - rgb(240, 187, 120)
 
 }
 
-
 html, body {
     display: block;
     font-size: 1rem;
@@ -41,6 +20,18 @@ html, body {
 
     
 }
+
+a {
+    text-decoration: none;
+}
+
+a:not(.logo):hover{
+        font-size: 1.05rem;
+        box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.062), 0px 6px 20px 0 rgba(0, 0, 0, 0.185);
+        border-radius: 1.2rem;
+}
+/* Header Container Start */
+
 .header-container {
     display: flex;
     width: 100%;
@@ -49,7 +40,6 @@ html, body {
     /* unicode-bidi: isolate;  */
     /* if arabic language ^ make the algoritm to change from l-r to r-l */
 }
-
 header {
     display: grid;
     grid-template-columns: 30%, 70%;
@@ -64,32 +54,35 @@ header {
     text-align: center;
 }
 
+/* Header Grid Start */
+
+.bhw-start {
+display: flex;
+text-align: center;
+justify-content: center;
+max-height: 2rem;
+}
+.bhwlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #logo {
   max-width: 40svh;
   height: auto;
   display: block;
   margin: 0 auto;
 }
+/* Header End Grid */
 
-.bhwlogo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.bhw-end {
+     display: flex;
+    text-align: center;
+    justify-content: center;
+    max-height: 2rem;
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:not(.logo):hover{
-        font-size: 1.05rem;
-        box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.062), 0px 6px 20px 0 rgba(0, 0, 0, 0.185);
-        border-radius: 1.2rem;
-}
+/* Header NavigationBar Start */
 
 nav.navbar-container {
         display: flex;
@@ -104,32 +97,13 @@ ul.navbar-header {
         justify-content: space-between;
         list-style-type: none;
 }
-
 li.navbar-list{
     margin: 0.3rem;
 }
+/* Header NavigationBar End */
+/* Header Container Section End */
 
-h1#hero-title {
-    font-size: 3rem;
-    padding-bottom: 1rem;
-}
-
-/* Specific Grid Areas */
-.bhw-start {
-display: flex;
-text-align: center;
-justify-content: center;
-max-height: 2rem;
-}
-
-.bhw-end {
-     display: flex;
-    text-align: center;
-    justify-content: center;
-    max-height: 2rem;
-}
-
-
+/* Page || Main Container Start*/
 .page-container {
     box-sizing: border-box;
     position: relative;
@@ -138,26 +112,30 @@ max-height: 2rem;
      max-width: 80%;
      margin-left: auto;
      margin-right: auto;
-     margin-top: 0%;
+     margin-top: 2rem;
      margin-bottom: 0%;
     padding: 1rem;
     justify-content: center;
      align-items: center;
 }
 
+/* Page || Main Hero Container Start */
 .hero {
         min-height: 25rem;
         display: flex;
         position: relative;
         border-radius: 0.5em;
-        text-align: center;
         background-color: rgb(239, 255, 98);
         flex-direction: column;
         transition: background-color 1s ease;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
+        border: 1px solid;
+        flex-wrap: nowrap;
+        border-color: rgb(110, 107, 107);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .hero:hover {
   animation: rainbow 5s linear infinite;
 }
@@ -171,11 +149,26 @@ max-height: 2rem;
   85%  { background-color: rgb(201, 186, 255); } /* soft indigo/violet */
   100% { background-color: rgb(239, 255, 98); } /* loop back */
 }
+.hero-title {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50%;
+    overflow:auto;
+}
+h1#hero-titletext {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+/* Page || Main Hero Container End */
+
+/* Page || Main Information Container Start  */
 
 .information-section {
         background-color: rgb(255, 189, 68);
-        text-align: center;
-        display: block;
+        display: flex;
         min-height: 25rem;
         padding: 2rem;
         position: relative;
@@ -190,26 +183,170 @@ max-height: 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 8px;
-    justify-items: center;
+    padding: 2em;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
 }
 
-.projects {
-    grid-row: span 2 / span 2;
+/* Project Grid Container Start */
+#projects {
+    display: flex;
+    border: 2px solid;
+    border-color: black;
     width: 100%;
-    padding: 0.3rem;
-    justify-items: center;
-    
-}
-.workexperience {
-    padding: 0.3rem;
-}
-
-.education {
+    flex-direction: column;
     grid-row: span 2 / span 2;
-    padding: 0.3rem;
+}
+.projectGrid-projectbox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    max-width: 30rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+.projectstitle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
 }
 
-.opensouce {
-     grid-column-start: 2;
+ul.projectsList {
+    list-style: none;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.projectitem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 136, 11);
+    border: 2px solid;
+    border-color: black;
+    margin: 1svh;
+    min-height: 4em;
+} 
+.projectitem:hover {
+    animation: rainbow 5s linear infinite;
+    font-weight: bold;
+}
+li.project-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+}
+p.projects-button-text {
+    font-size: 1.275rem;
+}
+
+/* Project Grid Container End */
+
+/* WorkExperience Grid Container Start */
+#workexperience{
+    padding: 0.3rem;
+    display: flex;
+    border: 2px solid;
+    border-color: black;
+    width: 100%;
+    flex-direction: column;
+}
+.workexperience-workgridbox {
+      display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    max-width: 30rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+/* WorkExperience Grid Container End */
+
+/* Education Grid Container Start */
+#education {
+    grid-row: span 2 / span 2;
+    display: flex;
+    border: 2px solid;
+    border-color: black;
+    width: 100%;
+    flex-direction: column;
     padding: 0.3rem;
 }
+ul.educationList {
+    list-style: none;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/* Education Grid Container End */
+
+/* OpenSource Grid Container Start */
+#opensouce {
+     grid-column-start: 2;
+     display: flex;
+    border: 2px solid;
+    border-color: black;
+    width: 100%;
+    flex-direction: column;
+    padding: 0.3rem;
+}
+/* OpenSource Grid Container End */
+
+/* Page || Main Information Container End  */
+
+
+/* Page || Main Container End  */
+
+
+
+
+
+/* Start Work Experience */
+
+.workexperience-Grid {}
+.workexperience-workgridbox {}
+.workexperience-title {}
+.workexperience-description {}
+
+/* Finish Work Expirience */
+
+/* Phones */
+
+@media (max-width:1000px){
+
+    .information-grid {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(1, 3fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    justify-items: center;
+    border: 1px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+    }
+
+    header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* aligns items vertically */
+    margin: 1em;
+    padding: 0.5rem 1rem;
+    min-height: 1rem;
+    min-width: 70%;
+    overflow: hidden;
+    text-align: center;
+}
+
+}
+
+/* Phone Eding */
+
+/* Finish Body Section */
