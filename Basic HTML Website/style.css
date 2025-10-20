@@ -25,7 +25,7 @@ a {
     text-decoration: none;
 }
 
-a:not(.logo):hover{
+a:not(.logo,.underconstuction):hover{
         font-size: 1.05rem;
         box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.062), 0px 6px 20px 0 rgba(0, 0, 0, 0.185);
         border-radius: 1.2rem;
@@ -202,7 +202,7 @@ h1#hero-titletext {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-    max-width: 30rem;
+    max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
 
@@ -213,7 +213,6 @@ h1#hero-titletext {
     flex-direction: column;
     padding: 0.5rem;
 }
-
 ul.projectsList {
     list-style: none;
     max-width: 100%;
@@ -249,33 +248,48 @@ p.projects-button-text {
 /* Project Grid Container End */
 
 /* WorkExperience Grid Container Start */
-#workexperience{
-    padding: 0.3rem;
+
+.workexperience-Grid{
     display: flex;
     border: 2px solid;
     border-color: black;
     width: 100%;
-    flex-direction: column;
 }
 .workexperience-workgridbox {
       display: flex;
     flex-direction: column;
+    justify-content: space-around;
     margin-bottom: 1rem;
-    max-width: 30rem;
+    max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+.workexperience-title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 /* WorkExperience Grid Container End */
 
 /* Education Grid Container Start */
-#education {
+.educationGrid {
     grid-row: span 2 / span 2;
     display: flex;
     border: 2px solid;
     border-color: black;
     width: 100%;
+}
+.educationgridcontent{
+        display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    padding: 0.3rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 ul.educationList {
     list-style: none;
@@ -287,34 +301,142 @@ ul.educationList {
 /* Education Grid Container End */
 
 /* OpenSource Grid Container Start */
-#opensouce {
-     grid-column-start: 2;
-     display: flex;
+.opensourceGrid {
+    display: flex;
     border: 2px solid;
     border-color: black;
     width: 100%;
+}
+.opensourcecontect{
+    display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    padding: 0.3rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 /* OpenSource Grid Container End */
 
+/* Reviews Section Container Start */
+.reviews-section {
+        background-color: rgb(232, 167, 37);
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        overflow: hidden;
+        border-radius: 0.5em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                gap: 8px;
+     padding: 2em;
+    border: 1px solid;
+    justify-content: center;
+}
+.reviews-section-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 20%;
+}
+.reviews-grid-section {
+    display: flex;
+    max-height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    overflow: hidden;
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 5rem;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+#reviews-box{
+    display: flex;
+    flex-direction: column;
+    min-height: 1rem;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    justify-content: center;
+    background-color: rgb(252, 252, 252);
+}
+.reviews-opinion-username{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.reviews-box-description {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+p.reviews-opinion-description {
+    font-size: 1.2rem;
+    margin: 2rem;
+    text-align: center;
+    display: flex;
+    font-style: inherit;
+    font-size: 1.175rem;
+    text-align: center;
+}
+/* Reviews Section Container End */
+
+
 /* Page || Main Information Container End  */
-
-
 /* Page || Main Container End  */
+ /* Footer Section Container Start */
+
+ .footer-container {
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    flex-direction: column;
+ }
+
+ .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    text-align: center;
+ }
+
+ .footer-meta {
+    font-size: smaller;
+    color: rgb(136, 131, 131);
+    display: flex;
+    flex-direction: column;
+
+ }
+
+ /* Footer Section Container End */
 
 
 
 
 
-/* Start Work Experience */
-
-.workexperience-Grid {}
-.workexperience-workgridbox {}
-.workexperience-title {}
-.workexperience-description {}
-
-/* Finish Work Expirience */
 
 /* Phones */
 
@@ -345,6 +467,38 @@ ul.educationList {
     text-align: center;
 }
 
+    .reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    max-height: 100%;
+    justify-content: center;
+}
+
+.reviews-grid-section {
+    display: flex;
+    max-height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.reviews-section-title {
+    font-size: 1.2rem;
+}
+
+p.projects-button-text {
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 0.9rem;
+}
+p {
+    font-size: 0.9rem;
+}
 }
 
 /* Phone Eding */

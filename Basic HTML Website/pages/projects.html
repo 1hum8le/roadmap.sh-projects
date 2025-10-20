@@ -3,40 +3,77 @@
     <head lang="en">
             <!-- MetaDates -->
     <title>Basic HTML Website</title>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" contect="one of a roadmap.sh exercises. Full HTML Website using also switching throe websites.">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+    <meta name="description" contect="You gonna find here all of projects from project list Basic HTML Website">
     <meta name="keywords" content="HTML, CSS, project, contact, information">
     <meta name="author" content="Jacob Sobon">
 
             <!-- Favicon + Styleing -->
     <link rel="icon" type="image/x-icon" href="/Basic HTML Website/src/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="/Basic HTML Website/style.css">
+    <link rel="stylesheet" type="text/css" href="/Basic HTML Website/css/projects.css">
 
             <!-- // Social Media Properties  -->
-    <meta property="og:title" content="Here you gonna find beautiful FEW PAGES Website" />
+    <meta property="og:title" content="Basic HTML Website - Jacob's Website" />
     <meta property="og:type" content="website" />
     <meta property="og:URL" content="#" />
     <meta property="og:image" content="https://i.pinimg.com/736x/23/3c/38/233c384e9dd3b1b1eb0d35e948c590f8.jpg" />
     <meta property="og:description" content="You're gonna find here all of nice pages.">
 </head>
-    <body>
+<div class="header-container">
         <header>
-                <!-- Logo and my Name -->
-            <div id="headerLogo" class="headerLogo">
-                <img href="index.html" class="logoImg" alt="logo.png" id="logo" src="/Basic HTML Website/src/favicon.ico" width="30px" height="30px"> 
-                <p class="logoText" id="logoText"> Jacob Sobon </h1>
-            </div>
-                <!-- Navigation Bar -->                
-            <div id="headerNavbar" class="headerNavbar">
-                <nav>
-                        <a href="/Basic HTML Website/index.html">Home</a>
-                        <a href="/Basic HTML Website/pages/projects.html">Projects</a>
-                        <a href="/Basic HTML Website/pages/articles.html">Article</a>
-                        <a href="/Basic HTML Website/pages/contact.html">Contact</a>
+                <!-- Logo with Website Name -->
+                 <div class="bhw-start">
+                    <div class="bhwlogo">
+                 <a class="logo" href="/Basic HTML Website/index.html">
+            <img alt="logo.png" id="logo" src="/Basic HTML Website/src/logo.png"></a>
+                    </div>
+                </div>
+                  <!-- Navigation Bar -->       
+                   <div class="bhw-end">         
+                <nav class="navbar-container">
+                    <ul class="navbar-header">
+                    <li class="navbar-list" id="navhomepage">
+                        <a href="/Basic HTML Website/index.html" class="nav-link"><i class="fa fa-home"></i>Home</a></li>
+                    <li class="navbar-list" id="navprojects">
+                        <a href="/Basic HTML Website/pages/projects.html"class="nav-link"><i class="fa fa-folder"></i>Projects</a></li>
+                    <li class="navbar-list" id="navarticles">
+                        <a href="/Basic HTML Website/pages/articles.html"class="nav-link"><i class="fa fa-file"></i>Article</a></li>
+                    <li class="navbar-list" id="navcontact">
+                        <a href="/Basic HTML Website/pages/contact.html"class="nav-link"><i class="fa fa-handshake-o"></i>Contact</a></li>
+                    </ul>
                 </nav>
-            </div>
+                </div>
+                <!-- End of Navigation and Header -->
         </header>
-        <main></main>
-        <footer></footer>
-    </body>
-</html>
+</div> 
+<div class="projects-page-container">
+    <main>
+       <a class="underconstuction" href="/Basic HTML Website/index.html"> 
+        <img src="/Basic HTML Website/src/underconstuction_.png" alt="underconstuction" href="/Basic HTML Website/index.html" style="width:99%;">
+    </a>
+    </main>
+</div>
+<div class="footer-container">            
+    <footer>
+                <div class="footer-content">
+                    <nav class="footer-nav" aria-label="Footer navigation" style="display:flex;gap:10px;flex-wrap:wrap;">
+                        <a href="/Basic HTML Website/index.html" rel="noopener">Home</a>
+                        <a href="/Basic HTML Website/pages/projects.html" rel="noopener">Projects</a>
+                        <a href="/Basic HTML Website/pages/articles.html" rel="noopener">Article</a>
+                        <a href="/Basic HTML Website/pages/contact.html" rel="noopener">Contact</a>
+                    </nav>
+                    
+                    <div class="footer-meta">
+                        <p>© Jacob Sobon 2025 | All rights reserved.</p>
+                        <p>Built with plain HTML — accessible and semantic.</p>
+                    </div>
+                    <div class="footer-contact">
+                        <address>
+                            <a href="mailto:hello@jacobsobon.dev">hello@jacobsobon.dev</a> • <a href="#" rel="noopener">LinkedIn</a> • <a href="https://github.com/1hum8le" rel="noopener">GitHub</a>
+                        </address>
+                    </div>
+                
+                </div>
+    </footer>
+ </div>

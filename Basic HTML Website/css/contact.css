@@ -1,0 +1,7 @@
+.contact-page-container{
+      box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+     align-items: center;
+     min-height: 50em;
+}
