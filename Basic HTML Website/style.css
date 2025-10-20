@@ -137,7 +137,9 @@ li.navbar-list{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .hero:hover {
-  animation: rainbow 5s linear infinite;
+  animation: rainbow 3s linear infinite;
+  font-weight: bold;
+    font-size: 1.075rem;
 }
 @keyframes rainbow {
   0%   { background-color: rgb(239, 255, 98); } /* start */
@@ -372,7 +374,12 @@ ul.educationList {
     border-width: 1px;
     border-color: black;
     justify-content: center;
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(239, 255, 98);
+}
+
+#reviews-box:hover{
+    animation: rainbow 1s linear infinite;
+    font-weight: bold;
 }
 .reviews-opinion-username{
     display: flex;
@@ -493,14 +500,31 @@ p.projects-button-text {
     font-size: 0.8rem;
 }
 
-h1 {
-    font-size: 0.9rem;
+h1#hero {
+    font-size: 1.80rem;
 }
 p {
     font-size: 0.9rem;
 }
+
+
+ footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* aligns items vertically */
+    padding: 0.5rem 1rem;
+    min-height: 1rem;
+    min-width: 70%;
+    overflow: hidden;
+    text-align: center;
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+}
 /* Phone Eding */
 
 /* Finish Body Section */
