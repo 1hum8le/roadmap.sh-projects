@@ -13,7 +13,7 @@ This repository contains multiple frontend projects built during my learning jou
   https://roadmap.sh/projects/basic-html-website
 
 - **Project 2 – Personal Portfolio**  
-  Accidently **Project1** was done as the same correctly.
+  Accidently **Project 1** was done as the same correctly.
   https://roadmap.sh/projects/portfolio-website
 
 ## About
