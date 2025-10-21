@@ -16,6 +16,8 @@ This repository contains multiple frontend projects built during my learning jou
   Accidently **Project 1** was done as the same correctly.
   https://roadmap.sh/projects/portfolio-website
 
+[URL="https://www.basichtmlwebsite.gt.tc/"] BASIC HTML WEBSITE
+
 ## About
 
 This README provides an overview of all projects in this repository.
