@@ -12,6 +12,10 @@ This repository contains multiple frontend projects built during my learning jou
   A simple multi-section website using semantic HTML.
   https://roadmap.sh/projects/basic-html-website
 
+- **Project 2 – Personal Portfolio**  
+  Accidently **Project1** was done as the same correctly.
+  https://roadmap.sh/projects/portfolio-website
+
 ## About
 
 This README provides an overview of all projects in this repository.
