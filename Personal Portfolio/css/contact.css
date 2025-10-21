@@ -1,0 +1,102 @@
+
+.contact-page-container{
+      box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+     align-items: center;
+     min-height: 100%;
+}
+
+.contact-page-information-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ text-align: center;
+ gap: 5px;
+ margin-top: 2rem;
+ align-items: center;
+}
+
+.contact-page-information {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: solid black 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   background-color: rgb(231, 152, 77);
+}
+
+
+.contact-page-formulage-container {
+  display: flex;
+  width: 100%;
+  min-height: 25rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+
+.contact-formulage {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  margin-top: 2rem;
+  background-color: rgb(231, 152, 77);
+  padding: 2rem;
+  border-radius: 2rem;
+  border: solid black 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes rainbow-contact {
+  0%   { background-color: rgb(231, 152, 77); } /* start */
+  14%  { background-color: rgb(255, 179, 186); } /* soft red/pink */
+  28%  { background-color: rgb(255, 223, 186); } /* soft orange */
+  42%  { background-color: rgb(255, 255, 186); } /* soft yellow */
+  57%  { background-color: rgb(186, 255, 201); } /* soft green */
+  71%  { background-color: rgb(186, 225, 255); } /* soft blue */
+  85%  { background-color: rgb(201, 186, 255); } /* soft indigo/violet */
+  100% { background-color: rgb(231, 152, 77) } /* loop back */
+}
+.contact-formulage:hover{
+  animation: rainbow-contact 5s linear infinite;
+    font-weight: bold;
+}
+input[type=text], select, textarea {
+  width:100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0.25rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type=submit] {
+  height: 2rem;
+  width: 100%;
+  background-color:rgb(184, 255, 52);
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=submit]:hover {
+  height: 2rem;
+  font-size:1.025rem;
+  width: 100%;
+  background-color:rgb(102, 255, 0)
+}
+
+footer {
+  margin-top: 2.5rem;
+}

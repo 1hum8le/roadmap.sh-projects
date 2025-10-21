@@ -1,0 +1,7 @@
+.article-page-container {
+ box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    align-items:center;
+    min-height: 50em;
+}

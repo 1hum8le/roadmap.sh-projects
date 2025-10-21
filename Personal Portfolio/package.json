@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "certbot": "^5.0.3"
+  }
+}
