@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="tasktracker.css">
+</head>
+<body>
+    <header>
+        <h1>Task Tracker</h1>
+    </header>
+    <main>
+        <section id="task-form">
+            <h2>Add New Task</h2>
+            <form>
+                <label for="task-name">Task Name:</label>
+                <input type="text" id="task-name" required>
+                <label for="task-due-date">Due Date:</label>
+                <input type="date" id="task-due-date" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+        <section id="task-list">
+            <h2>Task List</h2>
+            <ul>
+                <li>
+                    <span class="task-name">Sample Task</span>
+                    <span class="task-due-date">2023-10-01</span>
+                    <button class="delete-task">Delete</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Task Tracker</p>
+    </footer>
+    <script src="tasktracker.js"></script>
+</body>
+</html>
