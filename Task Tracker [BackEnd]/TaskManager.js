@@ -35,31 +35,30 @@ constructor () {
     });
   }
 
-  welcomeMessage () { // User Welcoming Message
+  start () { // User Welcoming Message
     this.rl.question(`\nWelcome in my Task Manager! \n Press "Enter" to Continue!\n`, (input) => {
       if (input === ''){
         // console.log(`Starting "userStart"`);
-        this.userStart()
+        this.userValidation()
         }
        else {
           console.log(`It must be "Enter" key to continue! \n`)
-          return this.welcomeMessage();
+          return this.start();
         }
 });}
 
-  userStart () { // User Registration Method
-
-    const filePath = `./${username}.json`
-
+  userValidation () { // User Registration Method
+  
     this.rl.question(`Write your name.\n`, (username) => {
     if (username === '')
       { console.log(`Your name CANNOT be empty!\n Please, try again!`);
-        return this.userStart();
+        return this.userValidation();
       } else 
+        
         { 
           if (fs.existsSync(`${username}.json`)) {
             console.log("User already Exist. Try again. \n");
-            return this.userStart()
+            return this.userValidation()
           } else
           fs.writeFile((this.filePath, (err) => {
             console.log(error)
