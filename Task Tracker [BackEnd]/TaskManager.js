@@ -17,9 +17,8 @@ constructor () {
   this.ac = new AbortController();
   this.signal = this.ac.signal;
   this.eventEmitter = new EventEmitter();
-  this.filePath = "./${username}";
   // User Data JSON Information
-
+  
   this.taskJSON = {
     id:"",
     description:"",
@@ -28,6 +27,8 @@ constructor () {
     updatedAt:"",
   }
   
+  this.username = {username:""};
+  this.filePath = `./${this.username}.json`;
   
     this.rl = readLine.createInterface({
   input: process.stdin,
@@ -53,20 +54,21 @@ constructor () {
     if (username === '')
       { console.log(`Your name CANNOT be empty!\n Please, try again!`);
         return this.userValidation();
-      } else 
-        
-        { 
-          if (fs.existsSync(`${username}.json`)) {
+
+      } else if (fs.existsSync(`${username}.json`)) {
             console.log("User already Exist. Try again. \n");
             return this.userValidation()
-          } else
-          fs.writeFile((this.filePath, (err) => {
-            console.log(error)
-          }))
-          this.userMenu();   
-        }
+            
+      } else if (!fs.existsSync(`${username}.json`)) {
+            console.log(`Creating new User: ${username} \n`);
+          fs.writeFile(`${username}.json`, JSON.stringify(this.username), (err) => {
+            if (err) {
+              console.error("Error creating user file:", err);
+            }
+          });
+          this.userMenu();
+      }
     });
-
 };
 
   userMenu () // Main Welcome Menu
