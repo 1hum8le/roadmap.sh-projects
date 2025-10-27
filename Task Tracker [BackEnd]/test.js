@@ -59,7 +59,7 @@ class Test1 {
 }
 )
   }
-
+  }
   printingMenu () { // Choosing Menu Options
   console.log(`[1] List of Tasks`);
   console.log(`[2] Add new Task`);
@@ -67,5 +67,5 @@ class Test1 {
   console.log(`[4] Delete Task`);
   console.log(`[Q] Quit`);
   }
-  }
 }
+
