@@ -12,31 +12,35 @@ import { error, log } from 'node:console';
 import { stringify } from 'node:querystring';
 import { once } from 'node:events';
 import { getRawInput } from 'readline-sync';
+import { parse } from 'node:path';
 
 export default class TaskManager {
 constructor () {
 
-  this.ac = new AbortController();
-  this.signal = this.ac.signal;
   this.eventEmitter = new EventEmitter();
+
   // User Data JSON Information
+  // this.username = `./${this.username}.json`
+  // this.username = this.task(parse(user))
   
-  this.taskJSON = {
-    id:"",
-    description:"",
-    status:"",
-    createdAt:"",
-    updatedAt:"",
-  }
+  // Users-Related Files
+  this.username = null;
+  this.userFilePath = null;
+ 
+  // Tasks Array
+  this.tasks = [];
+
+  // UI Messages
   this.welcomeMsg = chalk.yellow(`\nWelcome in my Task Manager! \n Press "Enter" to Continue!\n`)
-  this.username = `./${this.username}.json`
-
-
+  
+  // ReadLine Interface
     this.rl = readLine.createInterface({
   input: process.stdin,
   output: process.stdout
     });
   }
+
+// Start + Walidation + User Data Storage
 
   start () { // User Welcoming Message
     this.rl.question(boxen(this.welcomeMsg,{padding: 1, margin: 1, borderStyle: 'double'}), (input) => {
@@ -48,8 +52,9 @@ constructor () {
           console.log(`It must be "Enter" key to continue! \n`)
           return this.start();
         }
-});}
 
+
+});}
   userValidation () { // User Registration Method
     this.rl.question(`Write your name.\n`, (username) => {
     if (username === '')
@@ -68,28 +73,36 @@ constructor () {
               console.error("Error creating user file:", err);
             }
           });
-          this.userMenu();
+          this.menuUser();
       }
     });
-};
 
-  userMenu () // Main Welcome Menu
+
+  };
+  loadUserDate () {
+    console.log(`user Data has been loaded`);
+  }
+  saveUserData() {
+    console.log(`user Data has been saved`);
+  }
+
+  // Menu and Interactions (interface)
+  menuUser () // Main Welcome Menu
   { // Showing Menu for User Method
-    this.printingMenu()
-
- this.rl.question(`Choose an option: `, (answer) => {
-  switch (menu) {
+    this.menuPrint()
+    this.rl.question(`Choose an option: `, (answer) => {
+  switch (answer) {
     case '1':
-      this.listTasks();
+      this.taskList();
       break;
     case '2':
-      this.addTask();
+      this.taskAdd();
       break; 
     case '3':
-      this.updateTask();
+      this.taskUpdate();
       break;
     case '4':
-      this.deleteTask();
+      this.taskDelete();
       break;
     case 'Q':
     case 'q':
@@ -99,14 +112,15 @@ constructor () {
       break;
     default:
       console.log("Invalid option. Please try again.");
-      this.userMenu();
+      this.menuUser();
       break;
   }
 }
 )
-  }
 
- printingMenu() { // Choosing Menu Options
+
+}
+ menuPrint() { // Choosing Menu Options
   const header = (` Welcome ${this.username}! \n Choose your Option:\n`);
 
   const menu = `
@@ -129,19 +143,80 @@ constructor () {
   console.log(boxedMenu);
 }
 
-  addTask () { // Pushing New Task into JSON
+  // Funcjonality and Tasks Manipulation
+
+  taskList () {
 
   }
-  updateTask() { // Updating Task JSON Informations | In-Progress | Done
+  taskAdd () { // Pushing New Task into JSON
+    this.task = [];
+    const task = await this.questionPrompt("What do you need to do?\n", (taskName)=> {
+       this.taskname = taskName;
+      task.id = this.randomID();
+      task.status = "In-Progress";
+      task.createdAt = new Date().toISOString();
+      task.updatedAt = new Date().toISOString();
+    this.task.push(task);
+    });
+
+    const description = await this.questionPrompt(`${this.taskname} - what is a description (details)?`, (description)=> {
+      task.description = description;
+      this.task.push(task);
+      this.fs.writeFile(`${this.username}.json`, JSON.stringify(this.task, null, 2), (error) => {
+        if (error) {
+          console.error(`Error saving task:`, error);
+        } else {
+          console.log(chalk.green(`✔ Task Added Successfully!\n`));
+        }
+    });
+    const againQuestion = await this.questionPrompt(`Do you want to add another Task? (y/n)`, (answer)=> {
+      if (answer.toLowerCase() === 'y') {
+        this.taskAdd();
+      } else if (answer.toLowerCase() === 'n') {
+        this.menuUser();
+      } else {
+        console.log(`Wrong Typing!`);
+        return againQuestion;
+      }
+    })
+  });
+
+
+
+
+}
+  taskUpdate() { // Updating Task JSON Informations | In-Progress | Done
+
+
+
+    console.log("halo");
 
   }
-  deleteTask () { // Delete Existing Task from JSON
+  taskDelete () { // Delete Existing Task from JSON
+ console.log("halo");
+ 
 
-  }
+
+
+
+}
+
+  // Helping Functions
 
     randomID(){ // Generating Random ID
-      return Math.floor(Math.random(32).slice(2,10))
-    }
+        return Number(Math.random().toString().slice(2, 10));
+}
+    questionPrompt(questionText) { // Geting user question => return answer (avoid callbackhell) | using example: `const username = await questionPrompt("What is your name? \n"); 
+      return new Promise((resolve) => {
+        this.rl.question(questionText, (answer) => {
+        resolve(answer.trim());
+     });
+    });
+  }
+    
+
+
+
 }
 
 
