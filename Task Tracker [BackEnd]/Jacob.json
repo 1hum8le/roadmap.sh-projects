@@ -1,0 +1,42 @@
+[
+  {
+    "id": 87883367,
+    "name": "Sniadanie",
+    "description": "I am gonna need to do sniadanie tomorrow.",
+    "status": "todo",
+    "createdAt": "2025-10-29T20:23:34.258Z",
+    "updatedAt": "2025-10-29T20:23:34.260Z"
+  },
+  {
+    "id": 60309891,
+    "name": "Obiad",
+    "description": "I need to do obiad also",
+    "status": "todo",
+    "createdAt": "2025-10-29T20:25:47.568Z",
+    "updatedAt": "2025-10-29T20:25:47.569Z"
+  },
+  {
+    "id": 79088268,
+    "name": "Kolacja",
+    "description": "I need to make a kolacja also",
+    "status": "todo",
+    "createdAt": "2025-10-29T20:31:06.199Z",
+    "updatedAt": "2025-10-29T20:31:06.201Z"
+  },
+  {
+    "id": 18139923,
+    "name": "Kokainum",
+    "description": "i need tyo take my meds",
+    "status": "todo",
+    "createdAt": "2025-10-29T20:58:46.646Z",
+    "updatedAt": "2025-10-29T20:58:46.648Z"
+  },
+  {
+    "id": 61844344,
+    "name": "",
+    "description": "",
+    "status": "todo",
+    "createdAt": "2025-10-29T20:59:01.324Z",
+    "updatedAt": "2025-10-29T20:59:01.324Z"
+  }
+]
