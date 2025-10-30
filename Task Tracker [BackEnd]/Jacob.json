@@ -5,7 +5,7 @@
     "description": "I am gonna need to do sniadanie tomorrow.",
     "status": "todo",
     "createdAt": "2025-10-29T20:23:34.258Z",
-    "updatedAt": "2025-10-29T20:23:34.260Z"
+    "updatedAt": "2025-10-30 | 23:19"
   },
   {
     "id": 60309891,
@@ -27,9 +27,9 @@
     "id": 18139923,
     "name": "Kokainum",
     "description": "i need tyo take my meds",
-    "status": "todo",
+    "status": "inprogress",
     "createdAt": "2025-10-29T20:58:46.646Z",
-    "updatedAt": "2025-10-29T20:58:46.648Z"
+    "updatedAt": "2025-10-30 | 23:24"
   },
   {
     "id": 61844344,
@@ -38,5 +38,13 @@
     "status": "todo",
     "createdAt": "2025-10-29T20:59:01.324Z",
     "updatedAt": "2025-10-29T20:59:01.324Z"
+  },
+  {
+    "id": 31181374,
+    "name": "1",
+    "description": "number",
+    "status": "todo",
+    "createdAt": "2025-10-30 | 23:14",
+    "updatedAt": "2025-10-30 | 23:14"
   }
 ]

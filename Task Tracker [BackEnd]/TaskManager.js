@@ -9,6 +9,8 @@ import util from 'node:util' //konwersja funkcji callbackowych na "promisyfy"
 import chalk from 'chalk'; // console.log(chalk.(..) syling )
 import boxen from 'boxen'; // fancy boxes
 import figlet from 'figlet'; // fancy testing
+import inquirer from 'inquirer' // Terminal and Console Readig - listing, checkbox, selector, input (...)
+import { select } from '@inquirer/prompts'
 import { error, log } from 'node:console';
 import { stringify } from 'node:querystring';
 import { once } from 'node:events';
@@ -17,8 +19,8 @@ import { parse } from 'node:path';
 
 export default class TaskManager {
 constructor () {
-
   this.isReturningUser = false; // Powracajacy Uzytkownik
+  this.inquirer = inquirer; // loading inquirer powers
   this.eventEmitter = new EventEmitter();
 
   // User Data JSON Information
@@ -140,19 +142,24 @@ start() { // User Welcoming Message
       this.taskAdd();
       break; 
     case '3':
-      this.taskUpdate();
+      this.taskUpdate().then(() => {
+        this.menuUser();
+      }).catch((err) => {
+        console.error(chalk.red("⚠️ Error updating task:"), err);
+        this.menuUser();
+      });
       break;
     case '4':
       this.taskDelete();
       break;
     case 'Q':
     case 'q':
-      console.log("Exiting Task Manager. Goodbye!");
+      console.log(chalk.red.bold("Exiting Task Manager. Goodbye!"));
       this.rl.close();
       process.exit(0);
       break;
     default:
-      console.log("Invalid option. Please try again.");
+      console.log(chalk.red("Invalid option. Please try again."));
       this.menuUser();
       break;
   }
@@ -181,8 +188,8 @@ start() { // User Welcoming Message
   console.log(boxedMenu);
 }
 
-  // Funcjonality and Taasks Manipultion
-
+  // Functionality and Tasks Manipulation
+  
   taskList() {
 
   const filePath = `${this.username}.json`;
@@ -220,27 +227,24 @@ start() { // User Welcoming Message
     borderColor: 'cyan'
   }));
 
-  tasks.forEach((task, index) => {
-    console.log(chalk.green.bold(`${index + 1}. ${task.name}`));
-    console.log(chalk.yellow(`   Description: ${task.description}`));
-    console.log(chalk.cyan(`   Status: ${task.status}`));
-    console.log(chalk.gray(`   Created: ${task.createdAt}`));
-    console.log(chalk.gray(`   Updated: ${task.updatedAt}\n`));
-  });
+ this.tasks.forEach(task => this.taskSummary(task));
 
   this.taskAnother()
-
-  }
+}
   async taskAdd () { // Pushing New Task into JSON
     const taskName = await this.questionPrompt(chalk.cyan.bold("📢 Add Task: ")) // naprawic jezeli jest string "" wtedy task musi miec nazwwe
+    if (taskName === '') {
+      console.log(`❌ String cannot be Empty!`);
+      return this.taskAdd()}
+
     const taskDescription = await this.questionPrompt(chalk.cyan.bold(`${taskName} - 📜 Add Description: `))
     const task = {
       id: this.randomID(),
       name: taskName,
       description: taskDescription,
       status: 'todo',
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      createdAt: this.getFormattedDate(),
+      updatedAt: this.getFormattedDate()
     };
 
 
@@ -254,35 +258,61 @@ start() { // User Welcoming Message
       }
     })
     this.taskAnother()
-  }
+}
+   async taskAnother () { // Adding Another Task or Returning to Menu
 
-   async taskAnother () {
-
-    const taskAnother = await this.questionPrompt(chalk.cyan.bold(`Add Another Task? (y/n)`));
+    const taskAnother = await this.questionPrompt(chalk.cyan.bold(`Add Another Task? (y/n). Press Q to Quit to Main Menu: `));
 
     if (taskAnother.toLowerCase() === 'y') {
       await this.taskAdd();
     } else if (taskAnother.toLowerCase() === 'n') {
-      console.log(`Returning to the Main Menu...`);
+      console.log(`Printing Task List...\n`);
+      await this.taskList();
+    } else if (taskAnother.toLowerCase()=== 'q') {
+      console.log(`Exiting to Main Menu...`);
       await this.menuUser();
     } else {
       console.log(`Invalid Input.\n`);
       await this.taskAnother()
     }
 }
+ async taskUpdate() { // Updating Task JSON Informations | In-Progress | Done
+  await this.taskReader();
 
-
-  async taskUpdate() { // Updating Task JSON Informations | In-Progress | Done
-    console.log("UPDATE task");
-    this.taskMenu()
-  }
-  async taskDelete () { // Delete Existing Task from JSON
-        console.log("delete task");
-    this.taskMenu()
+  if (this.tasks.length === 0) {
+    console.log(chalk.yellow("📭 No tasks available to update."));
+    return this.menuUser();
   }
 
+  const taskChoice = await this.taskSelectUpdate(this.tasks);
 
-  // Helping Functions
+  const taskNewStatus = await this.taskStatusSelect(); 
+a
+  this.tasks[taskChoice].status = taskNewStatus;
+  this.tasks[taskChoice].updatedAt = this.getFormattedDate();
+
+  fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2));
+
+  console.log(chalk.green("✔ Task has been updated."));
+  this.menuUser(); 
+}
+  async taskDelete() { // Deleting Tasks from JSON File
+  await this.taskReader();
+
+  if (this.tasks.length === 0) {
+    console.log(chalk.yellow("📭 No tasks available to delete."));
+    return this.menuUser();
+  }
+  const taskChoice = await this.taskSelectDelete(this.tasks);
+  this.tasks.splice(taskChoice, 1);
+
+  fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2));
+
+  console.log(chalk.green("✔ Task has been deleted."));
+  this.menuUser();
+}
+
+// Helping Functions
 
     randomID () { // Generating Random ID
         return Number(Math.random().toString().slice(2, 10));
@@ -294,4 +324,81 @@ start() { // User Welcoming Message
      });
     });
   }
+
+    async taskSelectUpdate(tasks) {
+          const choices = tasks.map((task, index) => ({
+           name: `${index + 1}. ${chalk.green(task.name)} [${chalk.yellow(task.status)}]`,
+           value: index
+         }));
+
+         const { selectedIndex } = await this.inquirer.prompt([
+           {
+             type: 'list',
+             name: 'selectedIndex',
+             message: chalk.cyan.bold('📜Select a task:'),
+             choices
+           }
+         ]);
+
+  return selectedIndex;
+}
+
+  async taskSelectDelete(tasks) { // Selecting Tasks to Delete + Display Checkbox List
+  const choices = tasks.map((task, index) => ({
+    name: `${index + 1}. ${task.name} [${task.status}]`,
+    value: index
+  }));
+
+  const { selectedIndexes } = await this.inquirer.prompt([
+    {
+      type: 'checkbox',
+      name: 'selectedIndexes',
+      message: chalk.cyan.bold('📜Select tasks to delete:'),
+      choices
+    }
+  ]);
+
+  return selectedIndexes;
+}
+
+async taskStatusSelect() { // Selecting Task Status [Todo | In-Progress | Done]
+  const choices = [
+    { name: '💼 Todo', value: 'todo' },
+    { name: '✏ In Progress', value: 'inprogress' },
+    { name: '✔ Done', value: 'done' }
+  ];
+
+  const { selectedStatus } = await this.inquirer.prompt([
+    {
+      type: 'list',
+      name: 'selectedStatus',
+      message: chalk.cyan.bold('📜 Choose new status:'),
+      choices
+    }
+  ]);
+
+  return selectedStatus;
+}
+
+
+  taskReader () { // Reading Tasks from JSON File
+    const filePath = `${this.username}.json`;
+     const fileContent = fs.readFileSync(filePath, 'utf-8');
+     this.tasks = JSON.parse(fileContent);
+}
+  taskWriter() { // Writing Tasks into JSON File
+  fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2));
+}
+  getFormattedDate() { // Formated Date
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} | ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+}
+
+  taskSummary(task) { // Printing Task Informations
+  console.log(chalk.green.bold(task.name));
+  console.log(chalk.yellow(`Description: ${task.description}`));
+  console.log(chalk.cyan(`Status: ${task.status}`));
+  console.log(chalk.gray(`Created: ${task.createdAt}`));
+  console.log(chalk.gray(`Updated: ${task.updatedAt}\n`));
+}
 }
