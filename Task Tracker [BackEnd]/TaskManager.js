@@ -130,7 +130,7 @@ start() { // User Welcoming Message
 
 
   // Menu and Interactions (interface)
-  menuUser () // Main Welcome Menu
+ async menuUser () // Main Welcome Menu
   { // Showing Menu for User Method
     this.menuPrint()
     this.rl.question(`Choose an option: `, (answer) => {
@@ -142,12 +142,7 @@ start() { // User Welcoming Message
       this.taskAdd();
       break; 
     case '3':
-      this.taskUpdate().then(() => {
-        this.menuUser();
-      }).catch((err) => {
-        console.error(chalk.red("⚠️ Error updating task:"), err);
-        this.menuUser();
-      });
+      this.taskUpdate();
       break;
     case '4':
       this.taskDelete();
@@ -268,6 +263,7 @@ start() { // User Welcoming Message
     } else if (taskAnother.toLowerCase() === 'n') {
       console.log(`Printing Task List...\n`);
       await this.taskList();
+      this.menuUser();
     } else if (taskAnother.toLowerCase()=== 'q') {
       console.log(`Exiting to Main Menu...`);
       await this.menuUser();
@@ -277,6 +273,7 @@ start() { // User Welcoming Message
     }
 }
  async taskUpdate() { // Updating Task JSON Informations | In-Progress | Done
+ try {
   await this.taskReader();
 
   if (this.tasks.length === 0) {
@@ -284,10 +281,10 @@ start() { // User Welcoming Message
     return this.menuUser();
   }
 
-  const taskChoice = await this.taskSelectUpdate(this.tasks);
+  const taskChoice = await this.taskSelectUpdate();
 
-  const taskNewStatus = await this.taskStatusSelect(); 
-a
+  const taskNewStatus = await this.taskStatusSelect();
+
   this.tasks[taskChoice].status = taskNewStatus;
   this.tasks[taskChoice].updatedAt = this.getFormattedDate();
 
@@ -295,6 +292,12 @@ a
 
   console.log(chalk.green("✔ Task has been updated."));
   this.menuUser(); 
+
+} catch (err){
+  console.log(`Failed to Update file${err}`);
+  this.menuUser();
+}
+
 }
   async taskDelete() { // Deleting Tasks from JSON File
   await this.taskReader();
@@ -325,8 +328,8 @@ a
     });
   }
 
-    async taskSelectUpdate(tasks) {
-          const choices = tasks.map((task, index) => ({
+    async taskSelectUpdate() {
+          const choices = this.tasks.map((task, index) => ({
            name: `${index + 1}. ${chalk.green(task.name)} [${chalk.yellow(task.status)}]`,
            value: index
          }));
@@ -361,11 +364,11 @@ a
   return selectedIndexes;
 }
 
-async taskStatusSelect() { // Selecting Task Status [Todo | In-Progress | Done]
+async taskStatusSelect() { // Selecting Task Status [ToDo | In-Progress | Done]
   const choices = [
-    { name: '💼 Todo', value: 'todo' },
-    { name: '✏ In Progress', value: 'inprogress' },
-    { name: '✔ Done', value: 'done' }
+    { name: '💼 ToDo', value: 'ToDo' },
+    { name: '✏ In Progress', value: 'InProgress' },
+    { name: '✔ Done', value: 'Done' }
   ];
 
   const { selectedStatus } = await this.inquirer.prompt([
