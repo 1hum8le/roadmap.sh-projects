@@ -272,48 +272,204 @@ start() { // User Welcoming Message
       await this.taskAnother()
     }
 }
- async taskUpdate() { // Updating Task JSON Informations | In-Progress | Done
- try {
-  await this.taskReader();
+// Zastąp istniejącą metodę taskUpdate tą wersją
+async taskUpdate() {
+  try {
+    // Wczytaj aktualny stan z pliku (metoda ma być już w klasie)
+    await this.taskReader && typeof this.taskReader === 'function' ? await this.taskReader() : null;
 
-  if (this.tasks.length === 0) {
-    console.log(chalk.yellow("📭 No tasks available to update."));
+    if (!Array.isArray(this.tasks) || this.tasks.length === 0) {
+      console.log(chalk.yellow("📭 No tasks available to update."));
+      return this.menuUser();
+    }
+
+    // Wypisz listę z numerami
+    console.log(boxen(chalk.cyan.bold(`📋 ${this.username}'s Task List:`), {
+      padding: 1, margin: 1, borderStyle: 'double', borderColor: 'cyan'
+    }));
+    this.tasks.forEach((t, i) => {
+      console.log(`${i + 1}. ${chalk.green(t.name)} [${chalk.yellow(t.status)}]`);
+    });
+
+    // Zapytaj o numer zadania
+    const raw = await this.questionPrompt(chalk.cyan.bold('📜 Podaj numer zadania do aktualizacji: '));
+    const idx = Number(raw) - 1;
+
+    if (Number.isNaN(idx) || idx < 0 || idx >= this.tasks.length) {
+      console.log(chalk.red('❌ Nieprawidłowy numer. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Pokaż wybrane zadanie krótko
+    console.log(chalk.gray('\nWybrane zadanie:'));
+    this.taskSummary(this.tasks[idx]);
+
+    // Zapytaj o nowy status (używamy prostego input z walidacją)
+    console.log(chalk.cyan('Dostępne statusy: 1) ToDo  2) InProgress  3) Done'));
+    const rawStatus = await this.questionPrompt(chalk.cyan.bold('📜 Wybierz numer statusu (1-3): '));
+    const statusMap = { '1': 'ToDo', '2': 'InProgress', '3': 'Done' };
+    const newStatus = statusMap[rawStatus.trim()];
+
+    if (!newStatus) {
+      console.log(chalk.red('❌ Nieprawidłowy wybór statusu. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Zaktualizuj
+    this.tasks[idx].status = newStatus;
+    this.tasks[idx].updatedAt = this.getFormattedDate();
+
+    // Zapisz (użyj istniejącej taskWriter lub fs)
+    if (this.taskWriter && typeof this.taskWriter === 'function') {
+      this.taskWriter();
+    } else {
+      fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2), 'utf-8');
+    }
+
+    console.log(chalk.green('✔ Task has been updated.'));
+    return this.menuUser();
+  } catch (err) {
+    console.error(chalk.red('⚠️ Error in taskUpdate:'), err);
     return this.menuUser();
   }
-
-  const taskChoice = await this.taskSelectUpdate();
-
-  const taskNewStatus = await this.taskStatusSelect();
-
-  this.tasks[taskChoice].status = taskNewStatus;
-  this.tasks[taskChoice].updatedAt = this.getFormattedDate();
-
-  fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2));
-
-  console.log(chalk.green("✔ Task has been updated."));
-  this.menuUser(); 
-
-} catch (err){
-  console.log(`Failed to Update file${err}`);
-  this.menuUser();
 }
 
-}
-  async taskDelete() { // Deleting Tasks from JSON File
-  await this.taskReader();
+// Zastąp istniejącą metodę taskDelete tą wersją
+async taskDelete() {
+  try {
+    await this.taskReader && typeof this.taskReader === 'function' ? await this.taskReader() : null;
 
-  if (this.tasks.length === 0) {
-    console.log(chalk.yellow("📭 No tasks available to delete."));
+    if (!Array.isArray(this.tasks) || this.tasks.length === 0) {
+      console.log(chalk.yellow("📭 No tasks available to delete."));
+      return this.menuUser();
+    }
+
+    // Wypisz listę z numerami
+    console.log(boxen(chalk.cyan.bold(`📋 ${this.username}'s Task List:`), {
+      padding: 1, margin: 1, borderStyle: 'double', borderColor: 'cyan'
+    }));
+    this.tasks.forEach((t, i) => {
+      console.log(`${i + 1}. ${chalk.green(t.name)} [${chalk.yellow(t.status)}]`);
+    });
+
+    // Zapytaj o numery do usunięcia (np. "1,3" lub pojedynczy numer)
+    const raw = await this.questionPrompt(chalk.cyan.bold('📜 Podaj numer(y) zadania do usunięcia (np. 1 lub 1,3): '));
+    const parts = raw.split(',').map(s => s.trim()).filter(s => s !== '');
+    const indexes = parts.map(p => Number(p) - 1).filter(n => !Number.isNaN(n));
+
+    if (indexes.length === 0) {
+      console.log(chalk.yellow('❗ Nie wybrano poprawnych numerów. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Walidacja: upewnij się, że wszystkie indexy mieszczą się w tablicy
+    const invalid = indexes.some(i => i < 0 || i >= this.tasks.length);
+    if (invalid) {
+      console.log(chalk.red('❌ Jeden lub więcej numerów jest nieprawidłowy. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Potwierdzenie przed usunięciem
+    const names = indexes.map(i => this.tasks[i].name).join(', ');
+    const confirm = await this.questionPrompt(chalk.cyan.bold(`⚠️ Potwierdź usunięcie: ${names} (y/n): `));
+    if (confirm.toLowerCase() !== 'y') {
+      console.log(chalk.yellow('Anulowano usuwanie. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Usuń elementy od najwyższego indexu do najniższego, żeby nie rozjechały się indexy
+    const uniqueSorted = Array.from(new Set(indexes)).sort((a, b) => b - a);
+    for (const i of uniqueSorted) {
+      this.tasks.splice(i, 1);
+    }
+
+    // Zapisz zmiany
+    if (this.taskWriter && typeof this.taskWriter === 'function') {
+      this.taskWriter();
+    } else {
+      fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2), 'utf-8');
+    }
+
+    console.log(chalk.green('✔ Selected tasks have been deleted.'));
+    return this.menuUser();
+  } catch (err) {
+    console.error(chalk.red('⚠️ Error in taskDelete:'), err);
     return this.menuUser();
   }
-  const taskChoice = await this.taskSelectDelete(this.tasks);
-  this.tasks.splice(taskChoice, 1);
-
-  fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2));
-
-  console.log(chalk.green("✔ Task has been deleted."));
-  this.menuUser();
 }
+
+ async taskDelete() {
+  
+  try {
+    // Wczytaj aktualne zadania z pliku (zakłada, że taskReader istnieje)
+    if (this.taskReader && typeof this.taskReader === 'function') {
+      await this.taskReader();
+    }
+
+    if (!Array.isArray(this.tasks) || this.tasks.length === 0) {
+      console.log(chalk.yellow("📭 No tasks available to delete."));
+      return this.menuUser();
+    }
+
+    // Wypisz listę z numerami
+    console.log(boxen(chalk.cyan.bold(`📋 ${this.username}'s Task List:`), {
+      padding: 1, margin: 1, borderStyle: 'double', borderColor: 'cyan'
+    }));
+    this.tasks.forEach((t, i) => {
+      console.log(`${i + 1}. ${chalk.green(t.name)} [${chalk.yellow(t.status)}]`);
+    });
+
+    // Zapytaj o numery do usunięcia (np. "1,3" lub pojedynczy numer)
+    const raw = await this.questionPrompt(chalk.cyan.bold('📜 Podaj numer(y) zadania do usunięcia (np. 1 lub 1,3): '));
+    if (!raw) {
+      console.log(chalk.yellow('❗ Nie podano żadnego numeru. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    const parts = raw.split(',').map(s => s.trim()).filter(s => s !== '');
+    const indexes = parts.map(p => Number(p) - 1).filter(n => !Number.isNaN(n));
+
+    if (indexes.length === 0) {
+      console.log(chalk.yellow('❗ Nie wybrano poprawnych numerów. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Walidacja: upewnij się, że wszystkie indexy mieszczą się w tablicy
+    const invalid = indexes.some(i => i < 0 || i >= this.tasks.length);
+    if (invalid) {
+      console.log(chalk.red('❌ Jeden lub więcej numerów jest nieprawidłowy. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Potwierdzenie przed usunięciem
+    const names = indexes.map(i => this.tasks[i].name).join(', ');
+    const confirm = await this.questionPrompt(chalk.cyan.bold(`⚠️ Potwierdź usunięcie: ${names} (y/n): `));
+    if (!confirm || confirm.toLowerCase() !== 'y') {
+      console.log(chalk.yellow('Anulowano usuwanie. Wracam do menu.'));
+      return this.menuUser();
+    }
+
+    // Usuń elementy od najwyższego indexu do najniższego, żeby nie rozjechały się indexy
+    const uniqueSorted = Array.from(new Set(indexes)).sort((a, b) => b - a);
+    for (const i of uniqueSorted) {
+      this.tasks.splice(i, 1);
+    }
+
+    // Zapisz zmiany (użyj istniejącej taskWriter jeśli jest)
+    if (this.taskWriter && typeof this.taskWriter === 'function') {
+      this.taskWriter();
+    } else {
+      fs.writeFileSync(`${this.username}.json`, JSON.stringify(this.tasks, null, 2), 'utf-8');
+    }
+
+    console.log(chalk.green('✔ Selected tasks have been deleted.'));
+    return this.menuUser();
+  } catch (err) {
+    console.error(chalk.red('⚠️ Error in taskDelete:'), err);
+    return this.menuUser();
+  }
+}
+
 
 // Helping Functions
 
@@ -328,23 +484,25 @@ start() { // User Welcoming Message
     });
   }
 
-    async taskSelectUpdate() {
-          const choices = this.tasks.map((task, index) => ({
-           name: `${index + 1}. ${chalk.green(task.name)} [${chalk.yellow(task.status)}]`,
-           value: index
-         }));
+   async taskSelectUpdate(tasks) {
+  const choices = tasks.map((task, index) => ({
+    name: `${index + 1}. ${chalk.green(task.name)} [${chalk.yellow(task.status)}]`,
+    value: index
+  }));
 
-         const { selectedIndex } = await this.inquirer.prompt([
-           {
-             type: 'list',
-             name: 'selectedIndex',
-             message: chalk.cyan.bold('📜Select a task:'),
-             choices
-           }
-         ]);
+  const result = await this.inquirer.prompt([
+    {
+      type: 'list',
+      name: 'selectedIndex',
+      message: chalk.cyan.bold('📜Select a task:'),
+      choices
+    }
+  ]);
 
-  return selectedIndex;
+  console.log("Selected index:", result.selectedIndex);
+  return result.selectedIndex;
 }
+
 
   async taskSelectDelete(tasks) { // Selecting Tasks to Delete + Display Checkbox List
   const choices = tasks.map((task, index) => ({

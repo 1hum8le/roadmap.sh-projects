@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start CLI",
+      "program": "${workspaceFolder}/index.js", // lub Twój główny plik
+      "cwd": "${workspaceFolder}",              // <-- to jest kluczowe
+      "console": "integratedTerminal"
+    }
+  ]
+}
