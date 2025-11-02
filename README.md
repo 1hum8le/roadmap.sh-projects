@@ -30,9 +30,7 @@ ________________________________________________________________________________
 
 Simple CLI with additional color options and a nice design.
 
-### Installation
-
-### Global (recommended)
+### Installation Global (recommended)
 ```bash
 npm init -y
 npm install -g @1hum8le/tasktracker
@@ -42,6 +40,8 @@ ________________________________________________________________________________
 
 ## **Project 4 – [GitHub User Activity](https://roadmap.sh/projects/github-user-activity)**
 
-[More Information about this Project](GitHub-User-Activity/README.md)
+> [!NOTE]
+> [More Information about this Project](GitHub-User-Activity/README.md)
 
+____
 ## **Project 5 - [URL Shortening Service](https://roadmap.sh/projects/url-shortening-service)** (soon)
