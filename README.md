@@ -18,7 +18,6 @@ ________________________________________________________________________________
 BASIC HTML WEBSITE - https://www.basichtmlwebsite.gt.tc/
 ____________________________________________________________________________________________________________________
 - **Project 3 – [Task Tracker BackEnd](https://roadmap.sh/projects/task-tracker)**
-    ## TaskManager
 
 ### Features:
 
