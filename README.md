@@ -18,6 +18,27 @@ This repository contains multiple frontend projects built during my learning jou
 
 BASIC HTML WEBSITE - https://www.basichtmlwebsite.gt.tc/
 
-## About
+- **Project 3 – Task Tracker [BackEnd]**
+    ## TaskManager
 
-This README provides an overview of all projects in this repository.
+### Features:
+
+- User verification, allowing multiple users to use the application.
+- Ability to check the task list.
+- Adding and removing tasks.
+- Task prioritization [ToDo, InProcess, Done]
+
+Simple CLI with additional color options and a nice design.
+
+## Installation
+
+### Global (recommended)
+```bash
+npm init -y
+npm install -g @1hum8le/tasktracker
+node ./node_modules/@1hum8le/tasktracker/index.js
+  https://roadmap.sh/projects/task-tracker
+```
+
+- **Project 4 – GitHub User Activity** (soon)
+https://roadmap.sh/projects/github-user-activity
