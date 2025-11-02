@@ -1,6 +1,6 @@
 {
-  "name": "tasktracker",
-  "version": "1.0.0",
+  "name": "@1hum8le/tasktracker",
+  "version": "1.0.5",
   "description": "Tracking all of you tasks.",
   "main": "index.js",
   "type": "module",
@@ -10,15 +10,18 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "tasktracker": "index.js"
+  },
   "dependencies": {
     "@inquirer/prompts": "^7.9.0",
     "boxen": "^8.0.1",
     "chalk": "^5.6.2",
+    "eslint": "^9.39.0",
     "figlet": "^1.9.3",
     "gradient-string": "^3.0.0",
     "inquirer": "^12.10.0",
     "readline-sync": "^1.4.10"
   },
-  "devDependencies": {},
   "keywords": []
 }

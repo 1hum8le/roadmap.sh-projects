@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import TaskManager from './TaskManager.js'
 
 const ts = new TaskManager();
