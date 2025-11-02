@@ -1,0 +1,857 @@
+[
+  {
+    "id": "5621822613",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1086856547,
+      "name": "ALucek/pii-masking-rlenv",
+      "url": "https://api.github.com/repos/ALucek/pii-masking-rlenv"
+    },
+    "payload": {
+      "repository_id": 1086856547,
+      "push_id": 27913238000,
+      "ref": "refs/heads/main",
+      "head": "0ffc41c326140924f1854a111bb0e6d603e12e33",
+      "before": "7b7c48d6ef20329d4427503469910d72543e9888"
+    },
+    "public": true,
+    "created_at": "2025-10-31T21:08:00Z"
+  },
+  {
+    "id": "5600726630",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1086856547,
+      "name": "ALucek/pii-masking-rlenv",
+      "url": "https://api.github.com/repos/ALucek/pii-masking-rlenv"
+    },
+    "payload": {
+      "repository_id": 1086856547,
+      "push_id": 27892086029,
+      "ref": "refs/heads/main",
+      "head": "7b7c48d6ef20329d4427503469910d72543e9888",
+      "before": "2694233c169d24339a3c2d6bcbf041f7daf3097c"
+    },
+    "public": true,
+    "created_at": "2025-10-31T02:40:39Z"
+  },
+  {
+    "id": "5600643261",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1086856547,
+      "name": "ALucek/pii-masking-rlenv",
+      "url": "https://api.github.com/repos/ALucek/pii-masking-rlenv"
+    },
+    "payload": {
+      "repository_id": 1086856547,
+      "push_id": 27892002457,
+      "ref": "refs/heads/main",
+      "head": "2694233c169d24339a3c2d6bcbf041f7daf3097c",
+      "before": "1a9a2a7f731b029c02fefd25dd62d59d159c7049"
+    },
+    "public": true,
+    "created_at": "2025-10-31T02:33:44Z"
+  },
+  {
+    "id": "5600546315",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1086856547,
+      "name": "ALucek/pii-masking-rlenv",
+      "url": "https://api.github.com/repos/ALucek/pii-masking-rlenv"
+    },
+    "payload": {
+      "ref": "main",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/main",
+      "master_branch": "main",
+      "description": "RL Environment built using Verifiers for PII information masking",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-31T02:25:52Z"
+  },
+  {
+    "id": "5539745896",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1063574096,
+      "name": "ALucek/deep-competitive-analyst",
+      "url": "https://api.github.com/repos/ALucek/deep-competitive-analyst"
+    },
+    "payload": {
+      "repository_id": 1063574096,
+      "push_id": 27830774766,
+      "ref": "refs/heads/main",
+      "head": "6a65f288fa10f182c7a2e6e0381b12b943b81602",
+      "before": "18424348c650bf0cae70fc189863f801863d5031"
+    },
+    "public": true,
+    "created_at": "2025-10-28T22:15:12Z"
+  },
+  {
+    "id": "5539739767",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1063574096,
+      "name": "ALucek/deep-competitive-analyst",
+      "url": "https://api.github.com/repos/ALucek/deep-competitive-analyst"
+    },
+    "payload": {
+      "repository_id": 1063574096,
+      "push_id": 27830768554,
+      "ref": "refs/heads/main",
+      "head": "18424348c650bf0cae70fc189863f801863d5031",
+      "before": "f8ecdf151c0e45eda24787c4f8b3ab37638cca13"
+    },
+    "public": true,
+    "created_at": "2025-10-28T22:14:51Z"
+  },
+  {
+    "id": "5539484624",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1063574096,
+      "name": "ALucek/deep-competitive-analyst",
+      "url": "https://api.github.com/repos/ALucek/deep-competitive-analyst"
+    },
+    "payload": {
+      "repository_id": 1063574096,
+      "push_id": 27830511782,
+      "ref": "refs/heads/main",
+      "head": "f8ecdf151c0e45eda24787c4f8b3ab37638cca13",
+      "before": "46e1907170f5779d92c2d3aae504d529a64870b3"
+    },
+    "public": true,
+    "created_at": "2025-10-28T22:00:03Z"
+  },
+  {
+    "id": "5539476404",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1063574096,
+      "name": "ALucek/deep-competitive-analyst",
+      "url": "https://api.github.com/repos/ALucek/deep-competitive-analyst"
+    },
+    "payload": {
+      "repository_id": 1063574096,
+      "push_id": 27830503543,
+      "ref": "refs/heads/main",
+      "head": "46e1907170f5779d92c2d3aae504d529a64870b3",
+      "before": "0ea2ca517fbe536c4b078040801e3a509165706f"
+    },
+    "public": true,
+    "created_at": "2025-10-28T21:59:32Z"
+  },
+  {
+    "id": "5442218733",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27732624950,
+      "ref": "refs/heads/master",
+      "head": "0b8662a62bc8801ad830ead4d4c847317f20cb8e",
+      "before": "e1d488c5ff7ad834c9ff0c7cfb593ae28672df9a"
+    },
+    "public": true,
+    "created_at": "2025-10-24T13:33:39Z"
+  },
+  {
+    "id": "5442202395",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27732608597,
+      "ref": "refs/heads/master",
+      "head": "e1d488c5ff7ad834c9ff0c7cfb593ae28672df9a",
+      "before": "83b50231dbe8db6da540d0a74b2147655dc35426"
+    },
+    "public": true,
+    "created_at": "2025-10-24T13:33:01Z"
+  },
+  {
+    "id": "4228110377",
+    "type": "WatchEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "action": "started"
+    },
+    "public": true,
+    "created_at": "2025-10-24T02:01:01Z"
+  },
+  {
+    "id": "5428959040",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27719266386,
+      "ref": "refs/heads/master",
+      "head": "83b50231dbe8db6da540d0a74b2147655dc35426",
+      "before": "34ba7d69b043cdfd7d9e10392a5c7ac3e993af8a"
+    },
+    "public": true,
+    "created_at": "2025-10-24T02:00:11Z"
+  },
+  {
+    "id": "5421005522",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27711242286,
+      "ref": "refs/heads/master",
+      "head": "34ba7d69b043cdfd7d9e10392a5c7ac3e993af8a",
+      "before": "eeb21fc758690014c4aa9cb6fc2f15941ee9e115"
+    },
+    "public": true,
+    "created_at": "2025-10-23T17:52:41Z"
+  },
+  {
+    "id": "5419600416",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27709831701,
+      "ref": "refs/heads/master",
+      "head": "eeb21fc758690014c4aa9cb6fc2f15941ee9e115",
+      "before": "f82a20ec02f39a15f5a185fe7a25f45115d396be"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:46:31Z"
+  },
+  {
+    "id": "5419389403",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27709619888,
+      "ref": "refs/heads/master",
+      "head": "f82a20ec02f39a15f5a185fe7a25f45115d396be",
+      "before": "806595ae00d587e1c018616cce31f149bee550b0"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:36:39Z"
+  },
+  {
+    "id": "4217673687",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "action": "opened",
+      "number": 10,
+      "pull_request": {
+        "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp/pulls/10",
+        "id": 2941228141,
+        "number": 10,
+        "head": {
+          "ref": "revert-9-codex/refactor-api-gateway-config-management",
+          "sha": "327db86bcab2c1f0bbb8f1920d39adde8366581b",
+          "repo": {
+            "id": 1080841632,
+            "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp",
+            "name": "fastapi-template-gcp"
+          }
+        },
+        "base": {
+          "ref": "master",
+          "sha": "806595ae00d587e1c018616cce31f149bee550b0",
+          "repo": {
+            "id": 1080841632,
+            "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp",
+            "name": "fastapi-template-gcp"
+          }
+        }
+      }
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:36:32Z"
+  },
+  {
+    "id": "5419376329",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "ref": "revert-9-codex/refactor-api-gateway-config-management",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/revert-9-codex/refactor-api-gateway-config-management",
+      "master_branch": "master",
+      "description": "Minimal template to run FastAPI on Cloud Run as a private service, fronted by API Gateway enforcing Google API Key auth",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:36:02Z"
+  },
+  {
+    "id": "5418946554",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "ref": "codex/refactor-api-gateway-config-management",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/codex/refactor-api-gateway-config-management",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:16:48Z"
+  },
+  {
+    "id": "5418944892",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27709173477,
+      "ref": "refs/heads/master",
+      "head": "806595ae00d587e1c018616cce31f149bee550b0",
+      "before": "5043ca6343874bbacf19f16d07d4fe626acd5cb5"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:16:43Z"
+  },
+  {
+    "id": "4217186938",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "action": "labeled",
+      "number": 9,
+      "pull_request": {
+        "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp/pulls/9",
+        "id": 2941150117,
+        "number": 9,
+        "head": {
+          "ref": "codex/refactor-api-gateway-config-management",
+          "sha": "0ee5f7ca53f01760ebe959a6e94398fea0d02f14",
+          "repo": {
+            "id": 1080841632,
+            "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp",
+            "name": "fastapi-template-gcp"
+          }
+        },
+        "base": {
+          "ref": "master",
+          "sha": "5043ca6343874bbacf19f16d07d4fe626acd5cb5",
+          "repo": {
+            "id": 1080841632,
+            "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp",
+            "name": "fastapi-template-gcp"
+          }
+        }
+      },
+      "label": {
+        "id": 9509340646,
+        "node_id": "LA_kwDOQGxVoM8AAAACNs0F5g",
+        "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp/labels/codex",
+        "name": "codex",
+        "color": "ededed",
+        "default": false,
+        "description": null
+      },
+      "labels": [
+        {
+          "id": 9509340646,
+          "node_id": "LA_kwDOQGxVoM8AAAACNs0F5g",
+          "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp/labels/codex",
+          "name": "codex",
+          "color": "ededed",
+          "default": false,
+          "description": null
+        }
+      ]
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:16:34Z"
+  },
+  {
+    "id": "5418941334",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27709169933,
+      "ref": "refs/heads/codex/refactor-api-gateway-config-management",
+      "head": "0ee5f7ca53f01760ebe959a6e94398fea0d02f14",
+      "before": "5043ca6343874bbacf19f16d07d4fe626acd5cb5"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:16:34Z"
+  },
+  {
+    "id": "4217185819",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "action": "opened",
+      "number": 9,
+      "pull_request": {
+        "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp/pulls/9",
+        "id": 2941150117,
+        "number": 9,
+        "head": {
+          "ref": "codex/refactor-api-gateway-config-management",
+          "sha": "0ee5f7ca53f01760ebe959a6e94398fea0d02f14",
+          "repo": {
+            "id": 1080841632,
+            "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp",
+            "name": "fastapi-template-gcp"
+          }
+        },
+        "base": {
+          "ref": "master",
+          "sha": "5043ca6343874bbacf19f16d07d4fe626acd5cb5",
+          "repo": {
+            "id": 1080841632,
+            "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp",
+            "name": "fastapi-template-gcp"
+          }
+        }
+      }
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:16:34Z"
+  },
+  {
+    "id": "5418940602",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "ref": "codex/refactor-api-gateway-config-management",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/codex/refactor-api-gateway-config-management",
+      "master_branch": "master",
+      "description": "Minimal template to run FastAPI on Cloud Run as a private service, fronted by API Gateway enforcing Google API Key auth",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-23T16:16:32Z"
+  },
+  {
+    "id": "5418341050",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "ref": "codex/add-logging-settings-to-settings",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/codex/add-logging-settings-to-settings",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-23T15:51:17Z"
+  },
+  {
+    "id": "5417295378",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27707517404,
+      "ref": "refs/heads/master",
+      "head": "5043ca6343874bbacf19f16d07d4fe626acd5cb5",
+      "before": "82c639b28353f82905f5902b52a7325ceb562b91"
+    },
+    "public": true,
+    "created_at": "2025-10-23T15:09:39Z"
+  },
+  {
+    "id": "5417072423",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27707293713,
+      "ref": "refs/heads/master",
+      "head": "82c639b28353f82905f5902b52a7325ceb562b91",
+      "before": "d4cca5066d99781023f8786b6add7c225b57f3e6"
+    },
+    "public": true,
+    "created_at": "2025-10-23T15:01:17Z"
+  },
+  {
+    "id": "5417065713",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27707287016,
+      "ref": "refs/heads/codex/add-logging-settings-to-settings",
+      "head": "271ef126a3f379aecfabdc56210f6fe481c49a0f",
+      "before": "33663dcd06714710c3b88c9a939aa767a4f00e91"
+    },
+    "public": true,
+    "created_at": "2025-10-23T15:01:04Z"
+  },
+  {
+    "id": "5416888881",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "ref": "codex/update-port-field-default-and-validation",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/codex/update-port-field-default-and-validation",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-23T14:54:34Z"
+  },
+  {
+    "id": "5416887348",
+    "type": "PushEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "repository_id": 1080841632,
+      "push_id": 27707108181,
+      "ref": "refs/heads/master",
+      "head": "d4cca5066d99781023f8786b6add7c225b57f3e6",
+      "before": "ba79564b7f269deef6bd2e12039de31236bc6743"
+    },
+    "public": true,
+    "created_at": "2025-10-23T14:54:31Z"
+  },
+  {
+    "id": "5416873244",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 149807294,
+      "login": "ALucek",
+      "display_login": "ALucek",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ALucek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149807294?"
+    },
+    "repo": {
+      "id": 1080841632,
+      "name": "ALucek/fastapi-template-gcp",
+      "url": "https://api.github.com/repos/ALucek/fastapi-template-gcp"
+    },
+    "payload": {
+      "ref": "codex/add-env-example-alias-and-update-error-handling",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/codex/add-env-example-alias-and-update-error-handling",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-23T14:54:00Z"
+  }
+]
