@@ -1,17 +1,21 @@
-import FetchActivity from "../src/fetchActivity";
-import FormatActivity from "../src/formatActivity";
-import Utils from "../src/utils";
+import fetchActivity from './fetchActivity.js';
+import formatActivity from './formatActivity.js';
+import Utils from './utils.js';
 import { argv } from 'node:process';
 
-export async function run() {
-    const username = argv[2]}
-    if(!username) return handleError(`You must give a GitHub Username`)
 
-        try {
-            const events = await FetchActivity(username);
-            const output = FormatActivity(events);
-            console.log(output);
-            
-        } catch (err){
-            handleError(err.message)
-        }
+export async function run() {
+  const username = argv[2];
+  if (!username) {
+    console.error('❌ You must provide a GitHub username');
+    process.exit(1);
+  }
+
+  try {
+    const events = await fetchActivity(username);
+    const output = formatActivity(events);
+    console.log(output);
+  } catch (err) {
+    console.error(`❌ Error: ${err.message}`);
+  }
+}

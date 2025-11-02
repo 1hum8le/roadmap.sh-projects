@@ -1,23 +1,21 @@
-// Octokit.js
-// https://github.com/octokit/core.js#readme
+import fetch from 'node-fetch';
+import Utils from './utils.js';
 
-import Utils from "./utils.js";
-import fetch from "node-fetch";
-const utils = new Utils()
+const utils = new Utils();
 
 export default async function fetchActivity(username) {
+  try {
+    const res = await fetch(`https://api.github.com/users/${username}/events`);
+    const data = await res.json();
 
-    try {
-
-const fetchUserAPI = await fetch(`https://api.github.com/users/${username}/events`)
-const response = await fetchUserAPI.json()
-utils.jsonSave(username, response)
-
-// const raw = fs.readFileSync(`./test/${username}.json`, 'utf-8')
-// const parsed = JSON.parse(raw)
-// console.log(parsed);
-
-    } catch (err) {
-        console.error(`Failing Fetching UserAPIData! - ${err}`);
+    if (res.status === 404) {
+      console.error(`User "${username}" not found.`);
+      return null;
     }
+
+    utils.jsonSave(username, data);
+    return data;
+  } catch (err) {
+    throw new Error(`Failed to fetch GitHub data: ${err.message}`);
+  }
 }

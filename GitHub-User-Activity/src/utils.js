@@ -1,23 +1,16 @@
-import fs from 'node:fs'
+import fs from 'node:fs';
+import path from 'node:path';
 
 export default class Utils {
-    constructor (){
-    }
+  jsonSave(username, data) {
+    const filePath = path.resolve('./cache', `${username}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  }
 
-    jsonLoad(username){
-        try {
-        const raw = fs.readFileSync(`./cache/${username}.json`, 'utf-8');
-        return JSON.parse(raw); }
-
-        catch (err) {
-            console.error(`Error with Loading .JSON File - ${err}`);
-        }
-    }
-    jsonSave(username, response){
-        try{
-            fs.writeFileSync(`./cache/${username}.json`, JSON.stringify(response, null, 2)); 
-    } catch (err){
-        console.error(`Error with Saving .JSON File - ${err}`);    
-    }
-    }
+  jsonLoad(username) {
+    const filePath = path.resolve('./cache', `${username}.json`);
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(raw);
+  }
 }
