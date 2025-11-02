@@ -4,21 +4,20 @@ This repository contains multiple frontend projects built during my learning jou
 ____________________________________________________________________________________________________________________
 ## Projects
 
-- **Project 0 – Single Page CV**  
+- **Project 0 – [Single Page CV](https://roadmap.sh/projects/single-page-cv)**  
   A responsive CV layout built with HTML and CSS.
-  https://roadmap.sh/projects/single-page-cv
+
 ____________________________________________________________________________________________________________________
-- **Project 1 – Basic HTML Website**  
+- **Project 1 – [Basic HTML Website](https://roadmap.sh/projects/basic-html-website)**  
   A simple multi-section website using semantic HTML.
-  https://roadmap.sh/projects/basic-html-website
+
 ____________________________________________________________________________________________________________________
-- **Project 2 – Personal Portfolio**  
+- **Project 2 – [Personal Portfolio](https://roadmap.sh/projects/portfolio-website)**  
   Accidently **Project 1** was done as the same correctly.
-  https://roadmap.sh/projects/portfolio-website
 
 BASIC HTML WEBSITE - https://www.basichtmlwebsite.gt.tc/
 ____________________________________________________________________________________________________________________
-- **Project 3 – Task Tracker [BackEnd]**
+- **Project 3 – [Task Tracker BackEnd](https://roadmap.sh/projects/task-tracker)**
     ## TaskManager
 
 ### Features:
@@ -38,8 +37,10 @@ npm init -y
 npm install -g @1hum8le/tasktracker
 node ./node_modules/@1hum8le/tasktracker/index.js
 ```
-https://roadmap.sh/projects/task-tracker
 ____________________________________________________________________________________________________________________
 
-- **Project 4 – GitHub User Activity** (soon)
-https://roadmap.sh/projects/github-user-activity
+- **Project 4 – [GitHub User Activity](https://roadmap.sh/projects/github-user-activity)**
+
+[More Information about this Project](GitHub-User-Activity/README.md)
+
+- **Project 5 - [URL Shortening Service](https://roadmap.sh/projects/url-shortening-service)** (soon)
